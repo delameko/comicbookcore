@@ -2,9 +2,9 @@
 - name: deploy | prerequisites
   hosts: all
   become: yes
-  become_user: robotenemy
+  become_user: comicbookcore
   vars:
-    site_dir: /home/robotenemy/www/robotenemy.com
+    site_dir: /home/comicbookcore/www/comicbookcore.com
   tasks:
     - name: create site folder (if needed)
       file:
@@ -12,6 +12,5 @@
         state: directory
     - name: clone repo
       git:
-        repo: "https://github.com/delameko/robotenemy.git"
+        repo: "https://github.com/delameko/comicbookcore.git"
         dest: "{{ site_dir }}"
-
